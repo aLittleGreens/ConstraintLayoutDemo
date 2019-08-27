@@ -8,7 +8,7 @@
                                                 android:layout_marginTop="20dp"
                                                 android:layout_marginBottom="20dp"
                                                 app:layoutDescription="@xml/motion_scene"
-                                                app:showPaths="true"
+                                                app:showPaths="false"
                                                 tools:context=".MainActivity">
 
     <SeekBar
