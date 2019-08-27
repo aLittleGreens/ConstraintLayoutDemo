@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <!--
+
+        圆形定位（Circular Positioning）可以让一个控件以另一个控件的中心为中心点，来设置其相对与该中心点的距离和角度。
+        可以设置的属性有：
+        layout_constraintCircle：引用另一个控件的 id。
+        layout_constraintCircleRadius：到另一个控件中心的距离。
+        layout_constraintCircleAngle：控件的角度（顺时针，0 - 360 度）。
+
+        -->
+
+    <ImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/img_logo_personal_center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+            android:id="@+id/txt_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_mao_king_vip"
+            android:textStyle="bold"
+            app:layout_constraintCircle="@id/img_avatar"
+            app:layout_constraintCircleAngle="135"
+            app:layout_constraintCircleRadius="30dp" />
+
+
+</android.support.constraint.ConstraintLayout>

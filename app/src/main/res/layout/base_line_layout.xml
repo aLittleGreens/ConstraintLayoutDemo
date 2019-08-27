@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <!--基线约束
+    基线约束的作用就是将视图的文本基线与另一个视图的文本基线对齐：
+    添加完成后textView2
+    app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+    -->
+
+
+    <TextView
+            android:text="TextView1"
+            android:layout_width="71dp"
+            android:layout_height="89dp"
+            android:id="@+id/textView1"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="124dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="40dp"
+    />
+    <TextView
+            android:text="TextView2"
+            android:layout_width="100dp"
+            android:layout_height="228dp"
+            android:id="@+id/textView2"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView1"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="228dp"/>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <!--
+
+        1.1 版本中，当控件的尺寸设置为了 MATCH_CONSTRAINT 时（ 0dp），
+        在设置尺寸上又多了二个新的修饰属性：
+
+        layout_constrainWidth_percent。
+        layout_constrainHeight_percent。
+        这两个属性的作用就是指定当前控件的宽度或高度是父控件的百分之多少。
+        可设置的值在 0 - 1 之间，1 就是 100%。
+        设置button的宽度占父控件宽度的 80%（父控件占满全屏）例子：
+
+    -->
+
+    <Button
+            android:text="Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.8"
+            android:id="@+id/button7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="40dp"/>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.motion.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                xmlns:tools="http://schemas.android.com/tools"
+                                                android:id="@+id/activity_motion"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginTop="20dp"
+                                                android:layout_marginBottom="20dp"
+                                                app:layoutDescription="@xml/motion_scene"
+                                                app:showPaths="true"
+                                                tools:context=".MainActivity">
+
+    <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <ImageView
+            android:id="@+id/main_image1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/color1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"/>
+
+    <ImageView
+            android:id="@+id/main_image2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/color2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"/>
+
+    <ImageView
+            android:id="@+id/main_image3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/color3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"/>
+
+    <ImageView
+            android:id="@+id/main_image4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/color4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"/>
+
+
+    <android.support.constraint.motion.MotionLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:id="@+id/MotionLayoutMunu"
+            app:layoutDescription="@xml/motion_scene_munu"
+            app:showPaths="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+    >
+        <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:src="@drawable/ic_3d_rotation_black_24dp"
+                android:id="@+id/imageView1"/>
+        <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:src="@drawable/ic_add_a_photo_black_24dp"
+                android:id="@+id/imageView2"/>
+        <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:src="@drawable/ic_airport_shuttle_black_24dp"
+                android:id="@+id/imageView3"/>
+        <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:background="@color/colorPrimaryDark"
+                android:src="@drawable/ic_menu_black_24dp"
+                android:id="@+id/add"
+        />
+
+
+    </android.support.constraint.motion.MotionLayout>
+
+
+</android.support.constraint.motion.MotionLayout>

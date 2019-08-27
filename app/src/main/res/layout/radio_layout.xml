@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <!--
+
+    宽高至少有一项设置为 0dp 时（也就是 Match Constraints）
+    layout_constraintDimensionRatio  “宽度：高度” 该视图设置宽高比例
+
+    我们在添加 ration 时，则可以指示哪一方应该受到约束，
+    方法是在比率前面添加字母 W（用于限制宽度）或 H（用于限制高度），用逗号分隔：
+    app:layout_constraintDimensionRatio="h, 2:1"
+    这里设置的宽高比例是 3:1，那么高度就只有宽度的二分之一了：
+    -->
+
+    <Button
+            android:text="Button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/button5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="h,2:1"
+    />
+
+</android.support.constraint.ConstraintLayout>

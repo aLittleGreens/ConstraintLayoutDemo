@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <!--
+    Chains（链）是一种特定的约束，一个链包含了多个视图。
+    它允许链中的视图共享空间，并控制可用空间在它们之间如何分配。
+    该效果与 LinearLayout 的 Weiget 类似，但是链的作用远远超过它。
+    我们要是想创建一个链，那么首先就需要创建多个视图控件，然后再选择是创建「水平链」还是「垂直链」。
+
+     1、app:layout_constraintHorizontal_chainStyle=""
+        spread：将可用空间以均匀分布的方式将视图放置在链中（默认模式）：
+        spread_inside：将链中最外面的视图对齐到外边缘，然后在可用空间内均匀的放置链中的其他视图：
+        packed：将链中的视图紧紧的放在一起（可以提供边距让其分开）
+
+     2、Chains 还能对链中单独的视图控件设置 Weiget，与LinearLayout使用方式一样。
+      layout_constraintHorizontal_weight
+      layout_constraintVertical_weight
+      可以这样使用
+      android:layout_width="0dp"
+      app:layout_constraintHorizontal_weight="1"
+    -->
+
+
+    <Button
+            android:text="Button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/button2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button3"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="104dp"
+            app:layout_constraintHorizontal_chainStyle="spread"
+
+            />
+    <Button
+            android:text="Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_weight="1"
+            android:id="@+id/button3"
+            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/button4"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+    />
+    <Button
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button4"
+            app:layout_constraintStart_toEndOf="@+id/button3"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+<!--    <android.support.constraint.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="button4,button3" />-->
+</android.support.constraint.ConstraintLayout>

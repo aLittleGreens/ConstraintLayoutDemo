@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:padding="16dp"
+                                             app:layout_optimizationLevel="direct|barrier|dimensions"
+>
+
+    <!--
+
+    通过上图就可以发现，当在 A、B 控件的大小都不确定的情况下， View3 以谁作为约束对象都不对。
+    如果以 A 作为约束对象，那么当 B 的宽度过宽时就会被遮挡，同理以 B 作为约束也是如此。
+    那么此时，Barrier（屏障）就派上用场了。这是个非常好用的东东，和 GuideLine 一样，
+    它是一个虚拟的 View，对界面是不可见的。目的就是辅助布局。
+
+     对 Barrier 可以使用的属性有：
+    barrierDirection：设置 Barrier 所创建的位置。可设置的有：bottom、end、left、right、start、top。
+    constraint_referenced_ids：设置 Barrier 引用的控件。可设置多个，设置的方式是：id, id。（无需加 @id/）
+    barrierAllowsGoneWidgets：默认为 true，即当 Barrier 引用的控件被 GONE 掉时，
+    则 Barrier 默认的创建行为是在已 GONE 掉控件的已解析位置上进行创建。如果设置为 false，则不会将 GONE 掉的控件考虑在内。
+
+
+    -->
+
+
+    <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="This is a descriptive text."
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"/>
+
+    <android.support.constraint.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="title, desc"/>
+
+    <TextView
+            android:id="@+id/content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="This is a piece of content that is very long and long very long and long ..."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/barrier"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+</android.support.constraint.ConstraintLayout>

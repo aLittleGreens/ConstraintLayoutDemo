@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:motion="http://schemas.android.com/apk/res-auto"
+             >
+
+
+
+    <Transition
+            motion:constraintSetEnd="@id/end1"
+            motion:constraintSetStart="@id/start1"
+            motion:duration="500"
+            motion:motionInterpolator="easeInOut">
+        <OnClick
+                motion:clickAction="toggle"
+                motion:targetId="@id/add" />
+        ......
+        ......
+
+    </Transition>
+    <ConstraintSet android:id="@+id/start1">
+        <Constraint
+                android:id="@+id/imageView1"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintRight_toRightOf="parent" />
+        <Constraint
+                android:id="@+id/imageView2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintRight_toRightOf="parent" />
+        <Constraint
+                android:id="@+id/imageView3"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintRight_toRightOf="parent" />
+
+    </ConstraintSet>
+
+
+    <ConstraintSet android:id="@+id/end1">
+        <Constraint
+                android:id="@+id/imageView1"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                motion:layout_constraintCircle="@id/add"
+                motion:layout_constraintCircleAngle="0"
+                motion:layout_constraintCircleRadius="70dp"
+        />
+        <Constraint
+                android:id="@+id/imageView2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                motion:layout_constraintCircle="@id/add"
+                motion:layout_constraintCircleAngle="315"
+                motion:layout_constraintCircleRadius="66dp"
+        />
+        <Constraint
+                android:id="@+id/imageView3"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                motion:layout_constraintCircle="@id/add"
+                motion:layout_constraintCircleAngle="270"
+                motion:layout_constraintCircleRadius="70dp"
+        />
+
+    </ConstraintSet>
+
+</MotionScene>
